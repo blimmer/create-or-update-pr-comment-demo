@@ -1,0 +1,26 @@
+name: Demo
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  create-or-update-comment:
+    if: github.event.sender.id != 96450245 # ignore blimmer-bot comments to prevent an infinite loop
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create or Update Comment
+        run: |
+          PULL_REQUEST_URL="https://github.com/blimmer/github-pr-comment-api-demo/pull/${{github.event.issue.number}}"
+          MESSAGE="The current date is $(date). This comment will be updated."
+          if ! curl \
+              -f \
+              -H "x-api-key: $PR_COMMENT_API_KEY" \
+              -H 'Content-Type: application/json' \
+              -X PUT \
+              -d "{ \"url\": \"$PULL_REQUEST_URL\", \"body\": \"$MESSAGE\", \"singletonId\": \"singleton-demo\" }" \
+              'https://github-pr-comment-api.benlimmer.com/comment'; then
+                echo "Calling the github-pr-comment-api failed!"
+                exit 1
+          fi
+    env:
+      PR_COMMENT_API_KEY: ${{ secrets.PR_COMMENT_API_KEY }}
