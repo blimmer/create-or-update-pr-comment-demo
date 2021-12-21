@@ -1,4 +1,4 @@
-# GitHub PR Comment API Demo
+# Create or Update PR Comment API Demo
 
 Oftentimes, it's nice to have a bot user post some information to a Pull Request.
 For example, imagine a link to a pre-production preview link for the branch,
@@ -24,4 +24,4 @@ the history of each bot post is retained in the "edited" dropdown.
 ## Let's Connect!
 
 I'm a freelance architect and engineer who loves focusing on Developer Experience
-and tooling. Learn more at [benlimmer.com/freelance](https://benlimmer.com/freelance?utm_source=github&utm_campaign=github-pr-comment-api-demo).
+and tooling. Learn more at [benlimmer.com/freelance](https://benlimmer.com/freelance?utm_source=github&utm_campaign=create-or-update-pr-comment-demo).

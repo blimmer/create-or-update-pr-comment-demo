@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Create or Update Comment
         run: |
-          PULL_REQUEST_URL="https://github.com/blimmer/github-pr-comment-api-demo/pull/${{github.event.issue.number}}"
+          PULL_REQUEST_URL="https://github.com/blimmer/create-or-update-pr-comment-demo/pull/${{github.event.issue.number}}"
           MESSAGE="The current date is $(date). This comment will be updated."
           if ! curl \
               -f \
