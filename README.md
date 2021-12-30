@@ -8,6 +8,9 @@ However, GitHub doesn't provide a simple way to "create or update" a comment for
 a particular bot message. So, I built a simple serverless solution to work around
 this using the GitHub API.
 
+You can learn more about the backend implementation
+[at benlimmer.com](https://benlimmer.com/2021/12/20/create-or-update-pr-comment/).
+
 ## Demo
 
 To see this solution in action, check out
